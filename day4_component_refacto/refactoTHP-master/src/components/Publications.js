@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Avatar, Button, Card, Col, Icon, Row, Modal, List, Tag, Input, message } from 'antd/es';
+import { Col, Icon, Row, List } from 'antd/es';
 import PublicationsModal from './PublicationsModal';
 
 const Publications = ({ profileData, setProfileData }) => {
@@ -22,15 +22,15 @@ const Publications = ({ profileData, setProfileData }) => {
               <Icon type="save" />
               <span className="span-icon">Publications</span>
             </h2>
-            <Card bordered className="card-pubs" onClick={() => openPreview(0)}>
-              <img src={profileData.posts[0].imageUrl} width={200} height={200} alt={profileData.posts[0].imageUrl} />
-            </Card>
-            <Card bordered className="card-pubs" onClick={() => openPreview(1)}>
-              <img src={profileData.posts[1].imageUrl} width={200} height={200} alt={profileData.posts[1].imageUrl} />
-            </Card>
-            <Card bordered className="card-pubs" onClick={() => openPreview(2)}>
-              <img src={profileData.posts[2].imageUrl} width={200} height={200} alt={profileData.posts[2].imageUrl} />
-            </Card>
+            <List
+              bordered
+              dataSource={profileData.posts}
+              renderItem={(item) => (
+                <List.Item onClick={() => openPreview(item.id - 1)}>
+                  <img src={item.imageUrl} width={200} height={200} alt={item.imageUrl} />
+                </List.Item>
+              )}
+            />
           </Col>
         </Col>
       </Row>

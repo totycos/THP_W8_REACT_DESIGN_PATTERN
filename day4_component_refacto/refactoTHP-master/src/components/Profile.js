@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Avatar, Button, Card, Col, Icon, Row, Modal, List, Tag, Input, message } from 'antd/es';
+import { Avatar, Button, Card, Col, Icon, Row } from 'antd/es';
 import EditAccountModal from './EditAccountModal';
 import UploadPictureModal from './UploadPictureModal'
 
@@ -15,7 +15,7 @@ const Profile = ({ profileData, setProfileData }) => {
 
   return (
     <>
-      <EditAccountModal editProfilModal={editProfilModal} setEditProfilModal={setEditProfilModal} />
+      <EditAccountModal editProfilModal={editProfilModal} setEditProfilModal={setEditProfilModal} setProfileData={setProfileData} />
       <UploadPictureModal uploadModal={uploadModal} setUploadModal={setUploadModal} />
       <Row type="flex" align="middle" justify="center">
         <Col sm={16} xs={24}>

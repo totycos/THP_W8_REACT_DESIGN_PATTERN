@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Avatar, Button, Card, Col, Icon, Row, Modal, List, Tag, Input, message } from 'antd/es';
+import { Col, Row, Modal, Input, message } from 'antd/es';
 import profileData from '../datas/profileData.json'
 
 
-const EditAccountModal = ({ editProfilModal, setEditProfilModal }) => {
+const EditAccountModal = ({ editProfilModal, setEditProfilModal, setProfileData }) => {
   const [email, setEmail] = useState('myprofile@thp.fr')
   const [firstname, setFirstname] = useState('TheHacking')
   const [lastname, setLastname] = useState('Project')
@@ -15,7 +15,7 @@ const EditAccountModal = ({ editProfilModal, setEditProfilModal }) => {
     tmp.firstname = firstname;
     tmp.lastname = lastname;
     tmp.phoneNumber = phoneNumber;
-    //setProfileData(tmp)
+    setProfileData(tmp)
     setEditProfilModal(false)
     message.success('Profile well updated', 3);
   }

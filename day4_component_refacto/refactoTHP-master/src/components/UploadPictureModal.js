@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import MentionsTagsComponent from './MentionsTagsComponent';
-import { Avatar, Button, Card, Col, Icon, Row, Modal, List, Tag, Input, message } from 'antd/es';
+import { Col, Row, Modal, Input } from 'antd/es';
 
 const UploadPictureModal = ({ uploadModal, setUploadModal }) => {
   const [description, setDescription] = useState('')

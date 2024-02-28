@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Avatar, Button, Card, Col, Icon, Row, Modal, List, Tag, Input, message } from 'antd/es';
+import { Button, Col, Row, Modal, List, Tag } from 'antd/es';
 import profileData from '../datas/profileData.json'
 
 const PublicationsModal = ({ previewPublicationModal, setPreviewPublicationModal, previewItem }) => {
